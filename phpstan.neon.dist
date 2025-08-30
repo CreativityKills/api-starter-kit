@@ -1,0 +1,52 @@
+includes:
+    - phar://phpstan.phar/conf/bleedingEdge.neon
+parameters:
+    tmpDir: storage/tmp
+    noEnvCallsOutsideOfConfig: false
+    parallel:
+        maximumNumberOfProcesses: 100
+        minimumNumberOfJobsPerProcess: 2
+        processTimeout: 1000.0
+    #unused_public:
+    #    methods: true
+    #    properties: true
+    #    constants: true
+    ignoreErrors:
+        #- '#Class (.*)\\Models\\(.*) has PHPDoc tag @property for property (.*) with no value type specified in iterable type array.#'
+    scanFiles:
+        - tests/Pest.php
+    paths:
+        - app/
+    level: 8
+    checkOctaneCompatibility: true
+    treatPhpDocTypesAsCertain: false
+    excludePaths:
+            - tests/*
+    banned_code:
+        nodes:
+            - type: Stmt_Echo
+              functions: null
+            - type: Expr_Eval
+              functions: null
+            - type: Expr_Exit
+              functions: null
+            - type: Expr_FuncCall
+              functions:
+                  - dd
+                  - ray
+                  - debug_backtrace
+                  - dump
+                  - exec
+                  - passthru
+                  - phpinfo
+                  - print_r
+                  - proc_open
+                  - shell_exec
+                  - system
+                  - var_dump
+            - type: Expr_Print
+              functions: null
+            - type: Expr_ShellExec
+              functions: null
+        use_from_tests: true
+        non_ignorable: false

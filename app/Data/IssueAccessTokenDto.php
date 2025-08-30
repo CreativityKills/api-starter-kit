@@ -1,0 +1,37 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Yulo\Data;
+
+use Yulo\Models\User;
+use DateTimeInterface;
+use Yulo\Data\Enums\AccessLevel;
+
+readonly class IssueAccessTokenDto
+{
+    public string $name;
+
+    public ?DateTimeInterface $expiresAt;
+
+    public function __construct(
+        public User $user,
+        public AccessLevel $accessLevel,
+        ?DateTimeInterface $expiresAt = null,
+        ?string $name = null,
+    ) {
+        $this->name = $name ?? __('users-device-name', ['name' => $user->first_name]);
+        $this->expiresAt = $this->parseExpiresAt($expiresAt);
+    }
+
+    private function parseExpiresAt(?DateTimeInterface $expiresAt): ?DateTimeInterface
+    {
+        if ($expiresAt) {
+            return $expiresAt;
+        }
+
+        $ttl = intval(config('sanctum.expiration')) > 0 ? intval(config('sanctum.expiration')) : null;
+
+        return $ttl ? now()->addMinutes($ttl) : null;
+    }
+}
