@@ -43,6 +43,10 @@ built in.
    ```bash
    laravel new example-api --using=creativitykills/api-starter-kit
    ```
+2. **Using Composer**
+   ```bash
+   composer create-project creativitykills/api-starter-kit
+   ```
 
 Your API documentation will be available at `/docs` and your API endpoints will be ready for authentication and token management.
 
