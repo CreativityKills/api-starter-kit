@@ -155,7 +155,7 @@ class PostmanCollectionWriter extends BasePostmanCollectionWriter
      */
     private function getResponses(OutputEndpointData $endpoint): array
     {
-        return $endpoint->responses->map(function (Response $response) use ($endpoint) {
+        return collect($endpoint->responses)->map(function (Response $response) use ($endpoint) {
             $headers = [];
 
             foreach ($response->headers as $header => $value) {
