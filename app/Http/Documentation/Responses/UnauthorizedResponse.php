@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Http\Documentation\Responses;
+namespace App\Http\Documentation\Responses;
 
 use Attribute;
 use Symfony\Component\HttpFoundation\Response;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Extensions\Scribe\Writing\Postman;
+namespace App\Extensions\Scribe\Writing\Postman;
 
 use stdClass;
 use Illuminate\Pipeline\Pipeline;
@@ -189,11 +189,11 @@ class PostmanCollectionWriter extends BasePostmanCollectionWriter
 
     private function parseResponseContent(?string $json): string
     {
-        if (! $json) {
+        if (!$json) {
             return '';
         }
 
-        if (! $this->isJsonString($json)) {
+        if (!$this->isJsonString($json)) {
             return $json;
         }
 

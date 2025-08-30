@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 use Knuckles\Scribe\Config\AuthIn;
-use Yulo\Extensions\Scribe\Config\Defaults;
-use Yulo\Extensions\Scribe\Writing\Postman;
-use Yulo\Http\Middleware\AuthenticateIfNotLocal;
-use Yulo\Extensions\Scribe\Extracting\Strategies;
+use App\Extensions\Scribe\Config\Defaults;
+use App\Extensions\Scribe\Writing\Postman;
+use App\Http\Middleware\AuthenticateIfNotLocal;
+use App\Extensions\Scribe\Extracting\Strategies;
 
 use function Knuckles\Scribe\Config\removeStrategies;
 use function Knuckles\Scribe\Config\configureStrategy;

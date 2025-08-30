@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Extensions\Scribe\Extracting\Strategies\Metadata;
+namespace App\Extensions\Scribe\Extracting\Strategies\Metadata;
 
 use ReflectionClass;
 use ReflectionException;
 use ReflectionUnionType;
 use ReflectionFunctionAbstract;
-use Yulo\Contracts\SupportsDocumentation;
+use App\Contracts\SupportsDocumentation;
 use Illuminate\Foundation\Http\FormRequest;
 use Knuckles\Scribe\Extracting\Strategies\Strategy;
 use Knuckles\Camel\Extraction\ExtractedEndpointData;
@@ -24,7 +24,7 @@ class GetValidationRulesFromAction extends Strategy
      */
     public function __invoke(ExtractedEndpointData $endpointData, array $settings = []): ?array
     {
-        if (! $endpointData->method instanceof ReflectionFunctionAbstract) {
+        if (!$endpointData->method instanceof ReflectionFunctionAbstract) {
             return [];
         }
 
@@ -61,8 +61,8 @@ class GetValidationRulesFromAction extends Strategy
             if (
                 blank($type) ||
                 $type instanceof ReflectionUnionType ||
-                ! method_exists($type, 'getName') ||
-                ! class_exists($type->getName())
+                !method_exists($type, 'getName') ||
+                !class_exists($type->getName())
             ) {
                 continue;
             }

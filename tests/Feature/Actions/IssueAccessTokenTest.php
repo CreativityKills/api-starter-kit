@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-use Yulo\Models\User;
-use Yulo\Data\Enums\AccessLevel;
-use Yulo\Data\IssueAccessTokenDto;
-use Yulo\Data\IssuedAccessTokenDto;
-use Yulo\Events\IssuedAccessTokenEvent;
-use Yulo\Events\IssuingAccessTokenEvent;
-use Yulo\Data\Enums\AccessLevelAbilities;
-use Yulo\Actions\Sanctum\IssueAccessToken;
+use App\Models\User;
+use App\Data\Enums\AccessLevel;
+use App\Data\IssueAccessTokenDto;
+use App\Data\IssuedAccessTokenDto;
+use App\Events\IssuedAccessTokenEvent;
+use App\Events\IssuingAccessTokenEvent;
+use App\Data\Enums\AccessLevelAbilities;
+use App\Actions\Sanctum\IssueAccessToken;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Setup
@@ -41,7 +41,7 @@ it('can issue access token', function (AccessLevel $level, array $abilities, ?Da
 
     Event::assertDispatched(IssuingAccessTokenEvent::class);
     Event::assertDispatched(IssuedAccessTokenEvent::class);
-})->with(fn () => [
+})->with(fn() => [
     AccessLevel::FULL->value => [
         'level' => AccessLevel::FULL,
         'abilities' => ['*'],

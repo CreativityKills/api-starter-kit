@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Data\Enums;
+namespace App\Data\Enums;
 
 enum AccessLevelAbilities: string
 {
@@ -44,16 +44,16 @@ enum AccessLevelAbilities: string
     public static function for(AccessLevel $level, bool $asString = false): array|string
     {
         $abilities = match ($level) {
-            AccessLevel::FULL => array_map(fn (self $item) => $item->value, self::forFull()),
-            AccessLevel::BASIC => array_map(fn (self $item) => $item->value, self::forBasic()),
-            AccessLevel::TRIAL => array_map(fn (self $item) => $item->value, self::forTrial()),
+            AccessLevel::FULL => array_map(fn(self $item) => $item->value, self::forFull()),
+            AccessLevel::BASIC => array_map(fn(self $item) => $item->value, self::forBasic()),
+            AccessLevel::TRIAL => array_map(fn(self $item) => $item->value, self::forTrial()),
         };
 
         return $asString ? implode(',', $abilities) : $abilities;
     }
 
     /**
-     * @return \Yulo\Data\Enums\AccessLevelAbilities[]
+     * @return \App\Data\Enums\AccessLevelAbilities[]
      */
     private static function forTrial(): array
     {
@@ -66,7 +66,7 @@ enum AccessLevelAbilities: string
     }
 
     /**
-     * @return \Yulo\Data\Enums\AccessLevelAbilities[]
+     * @return \App\Data\Enums\AccessLevelAbilities[]
      */
     private static function forFull(): array
     {
@@ -85,7 +85,7 @@ enum AccessLevelAbilities: string
     }
 
     /**
-     * @return \Yulo\Data\Enums\AccessLevelAbilities[]
+     * @return \App\Data\Enums\AccessLevelAbilities[]
      */
     private static function forBasic(): array
     {

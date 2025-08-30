@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use Yulo\Models\User;
-use Yulo\Data\Enums\AccessLevel;
-use Yulo\Data\IssueAccessTokenDto;
-use Yulo\Actions\Sanctum\IssueAccessToken;
+use App\Models\User;
+use App\Data\Enums\AccessLevel;
+use App\Data\IssueAccessTokenDto;
+use App\Actions\Sanctum\IssueAccessToken;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -37,8 +37,8 @@ it('will refresh the access token', function () {
         ->assertOk()
         ->assertJsonStructure(['access_token', 'access_token_expires_at', 'refresh_token', 'refresh_token_expires_at']);
 
-    expect(fn () => $oldToken->getAccessToken()->refresh())->toThrow(ModelNotFoundException::class)
-        ->and(fn () => $oldToken->getRefreshToken()->refresh())->toThrow(ModelNotFoundException::class)
+    expect(fn() => $oldToken->getAccessToken()->refresh())->toThrow(ModelNotFoundException::class)
+        ->and(fn() => $oldToken->getRefreshToken()->refresh())->toThrow(ModelNotFoundException::class)
         ->and($user->tokens()->count())->toBe(2);
 });
 

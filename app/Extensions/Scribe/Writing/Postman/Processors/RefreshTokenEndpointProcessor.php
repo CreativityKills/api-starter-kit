@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Extensions\Scribe\Writing\Postman\Processors;
+namespace App\Extensions\Scribe\Writing\Postman\Processors;
 
 use Closure;
 use stdClass;

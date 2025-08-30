@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Http\Responses;
+namespace App\Http\Responses;
 
-use Yulo\Models\User;
-use Yulo\Data\Enums\AccessLevel;
-use Yulo\Data\IssueAccessTokenDto;
-use Yulo\Actions\Sanctum\IssueAccessToken;
+use App\Models\User;
+use App\Data\Enums\AccessLevel;
+use App\Data\IssueAccessTokenDto;
+use App\Actions\Sanctum\IssueAccessToken;
 use Laravel\Fortify\Contracts\LoginResponse as LoginResponseContract;
 
 class LoginResponse implements LoginResponseContract

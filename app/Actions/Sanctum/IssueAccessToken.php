@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Actions\Sanctum;
+namespace App\Actions\Sanctum;
 
-use Yulo\Data\IssueAccessTokenDto;
-use Yulo\Data\IssuedAccessTokenDto;
-use Yulo\Events\IssuedAccessTokenEvent;
-use Yulo\Events\IssuingAccessTokenEvent;
+use App\Data\IssueAccessTokenDto;
+use App\Data\IssuedAccessTokenDto;
+use App\Events\IssuedAccessTokenEvent;
+use App\Events\IssuingAccessTokenEvent;
 
 readonly class IssueAccessToken
 {
@@ -17,7 +17,7 @@ readonly class IssueAccessToken
 
         return tap(
             $issueRequestDto->user->createTokenFromDto($issueRequestDto),
-            fn (IssuedAccessTokenDto $token) => IssuedAccessTokenEvent::dispatch($issueRequestDto, $token)
+            fn(IssuedAccessTokenDto $token) => IssuedAccessTokenEvent::dispatch($issueRequestDto, $token)
         );
     }
 }

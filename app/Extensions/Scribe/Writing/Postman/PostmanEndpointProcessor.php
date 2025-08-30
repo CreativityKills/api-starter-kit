@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Extensions\Scribe\Writing\Postman;
+namespace App\Extensions\Scribe\Writing\Postman;
 
 class PostmanEndpointProcessor
 {

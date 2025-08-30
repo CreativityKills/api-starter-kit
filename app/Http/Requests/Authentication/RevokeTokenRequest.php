@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Http\Requests\Authentication;
+namespace App\Http\Requests\Authentication;
 
-use Yulo\Contracts\SupportsDocumentation;
-use Yulo\Data\Enums\AccessLevelAbilities;
+use App\Contracts\SupportsDocumentation;
+use App\Data\Enums\AccessLevelAbilities;
 use Illuminate\Foundation\Http\FormRequest;
 
 class RevokeTokenRequest extends FormRequest implements SupportsDocumentation

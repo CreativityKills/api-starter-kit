@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Data;
+namespace App\Data;
 
-use Yulo\Models\User;
+use App\Models\User;
 use DateTimeInterface;
-use Yulo\Data\Enums\AccessLevel;
+use App\Data\Enums\AccessLevel;
 
 readonly class IssueAccessTokenDto
 {

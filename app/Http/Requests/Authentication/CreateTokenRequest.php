@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Http\Requests\Authentication;
+namespace App\Http\Requests\Authentication;
 
-use Yulo\Contracts\SupportsDocumentation;
+use App\Contracts\SupportsDocumentation;
 use Laravel\Fortify\Http\Requests\LoginRequest;
 
 class CreateTokenRequest extends LoginRequest implements SupportsDocumentation

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Data;
+namespace App\Data;
 
 use Carbon\Carbon;
 use Laravel\Sanctum\NewAccessToken;

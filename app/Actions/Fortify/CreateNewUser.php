@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Actions\Fortify;
+namespace App\Actions\Fortify;
 
-use Yulo\Models\User;
+use App\Models\User;
 use Illuminate\Support\Arr;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Yulo\Concerns\PasswordValidationRules;
+use App\Concerns\PasswordValidationRules;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 
 class CreateNewUser implements CreatesNewUsers

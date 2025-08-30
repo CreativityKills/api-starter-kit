@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Http\Controllers\Authentication;
+namespace App\Http\Controllers\Authentication;
 
 use Knuckles\Scribe\Attributes\Header;
-use Yulo\Actions\Sanctum\IssueAccessToken;
+use App\Actions\Sanctum\IssueAccessToken;
 use Laravel\Fortify\Contracts\LoginResponse;
 use Knuckles\Scribe\Attributes\Authenticated;
 use Symfony\Component\HttpFoundation\Response;
-use Yulo\Http\Documentation\Groups\AuthenticationGroup;
-use Yulo\Http\Documentation\Responses\RateLimitedResponse;
-use Yulo\Http\Documentation\Responses\UnauthorizedResponse;
-use Yulo\Http\Documentation\Responses\UnprocessableEntityResponse;
-use Yulo\Http\Requests\Authentication\RefreshTokenRequest as Request;
-use Yulo\Http\Documentation\Responses\Authentication\AccessTokenResponse;
+use App\Http\Documentation\Groups\AuthenticationGroup;
+use App\Http\Documentation\Responses\RateLimitedResponse;
+use App\Http\Documentation\Responses\UnauthorizedResponse;
+use App\Http\Documentation\Responses\UnprocessableEntityResponse;
+use App\Http\Requests\Authentication\RefreshTokenRequest as Request;
+use App\Http\Documentation\Responses\Authentication\AccessTokenResponse;
 
 #[AuthenticationGroup]
 final class RefreshTokenController

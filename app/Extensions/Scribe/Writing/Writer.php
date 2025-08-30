@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Extensions\Scribe\Writing;
+namespace App\Extensions\Scribe\Writing;
 
 use Knuckles\Scribe\Tools\Utils;
 use Knuckles\Scribe\Writing\Writer as BaseWriter;
@@ -18,12 +18,12 @@ class Writer extends BaseWriter
             return;
         }
 
-        if (! is_dir($this->laravelTypeOutputPath)) {
+        if (!is_dir($this->laravelTypeOutputPath)) {
             mkdir($this->laravelTypeOutputPath, 0777, true);
         }
 
         $publicDirectory = public_path();
-        if (! is_dir($publicDirectory.$this->laravelAssetsPath)) {
+        if (!is_dir($publicDirectory.$this->laravelAssetsPath)) {
             mkdir($publicDirectory.$this->laravelAssetsPath, 0777, true);
         }
 

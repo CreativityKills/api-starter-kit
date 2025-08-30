@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 use Laravel\Fortify\RoutePath;
-use Yulo\Data\Enums\AccessLevel;
+use App\Data\Enums\AccessLevel;
 use Illuminate\Support\Facades\Route;
-use Yulo\Http\Controllers\Authentication;
+use App\Http\Controllers\Authentication;
 
 // --------------------------------------------------------------------------------------------------------------------
 // Authentication

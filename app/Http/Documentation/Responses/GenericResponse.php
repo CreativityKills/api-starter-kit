@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Http\Documentation\Responses;
+namespace App\Http\Documentation\Responses;
 
 use Attribute;
 use Illuminate\Contracts\Support\Arrayable;
@@ -22,8 +22,8 @@ class GenericResponse implements Arrayable
     }
 
     /**
-     * @throws \JsonException
      * @return array{status: int, content: string, description: string, headers: array<string, string>}
+     * @throws \JsonException
      */
     public function toArray(): array
     {
@@ -55,8 +55,8 @@ class GenericResponse implements Arrayable
             Response::HTTP_UNPROCESSABLE_ENTITY => json_encode([
                 'message' => 'The given data was invalid.',
                 'errors' => $this->getBodyParametersFromFormRequest() ?? [
-                    'field_name' => ['The given data was invalid.'],
-                ],
+                        'field_name' => ['The given data was invalid.'],
+                    ],
             ], JSON_THROW_ON_ERROR),
             Response::HTTP_NO_CONTENT, Response::HTTP_CREATED => '',
             default => ['message' => 'Unknown status'],
@@ -72,8 +72,8 @@ class GenericResponse implements Arrayable
     {
         $request = $this->getFormRequest();
         if (
-            ! $request ||
-            (! method_exists($request, 'bodyParameters') && ! method_exists($request, 'queryParameters'))
+            !$request ||
+            (!method_exists($request, 'bodyParameters') && !method_exists($request, 'queryParameters'))
         ) {
             return null;
         }

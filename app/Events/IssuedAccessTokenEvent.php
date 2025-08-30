@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Events;
+namespace App\Events;
 
-use Yulo\Data\IssueAccessTokenDto;
-use Yulo\Data\IssuedAccessTokenDto;
+use App\Data\IssueAccessTokenDto;
+use App\Data\IssuedAccessTokenDto;
 use Illuminate\Foundation\Events\Dispatchable;
 
 class IssuedAccessTokenEvent

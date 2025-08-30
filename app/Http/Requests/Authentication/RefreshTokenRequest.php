@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Http\Requests\Authentication;
+namespace App\Http\Requests\Authentication;
 
 use Throwable;
 use Laravel\Sanctum\PersonalAccessToken;
-use Yulo\Contracts\SupportsDocumentation;
+use App\Contracts\SupportsDocumentation;
 use Illuminate\Foundation\Http\FormRequest;
 
 class RefreshTokenRequest extends FormRequest implements SupportsDocumentation
@@ -48,7 +48,7 @@ class RefreshTokenRequest extends FormRequest implements SupportsDocumentation
 
     public function getUserAccessToken(): PersonalAccessToken
     {
-        if (! $this->userAccessToken) {
+        if (!$this->userAccessToken) {
             $hashedToken = hash('sha256', $this->string('token')->explode('|')->last(default: ''));
             $this->userAccessToken = currentUserOrFail()->tokens()->where('token', $hashedToken)->firstOrFail();
         }

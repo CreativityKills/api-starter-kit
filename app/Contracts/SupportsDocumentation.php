@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Contracts;
+namespace App\Contracts;
 
 interface SupportsDocumentation
 {

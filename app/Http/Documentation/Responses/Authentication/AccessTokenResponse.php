@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Http\Documentation\Responses\Authentication;
+namespace App\Http\Documentation\Responses\Authentication;
 
 use Attribute;
 use Symfony\Component\HttpFoundation\Response;
-use Yulo\Http\Documentation\Responses\GenericResponse;
+use App\Http\Documentation\Responses\GenericResponse;
 
 #[Attribute(Attribute::IS_REPEATABLE | Attribute::TARGET_FUNCTION | Attribute::TARGET_METHOD | Attribute::TARGET_CLASS)]
 class AccessTokenResponse extends GenericResponse

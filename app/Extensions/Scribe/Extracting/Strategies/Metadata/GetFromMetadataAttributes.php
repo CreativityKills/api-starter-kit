@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Extensions\Scribe\Extracting\Strategies\Metadata;
+namespace App\Extensions\Scribe\Extracting\Strategies\Metadata;
 
-use Yulo\Extensions\Scribe\Concerns\ExtendableAttributeNames;
+use App\Extensions\Scribe\Concerns\ExtendableAttributeNames;
 use Knuckles\Scribe\Extracting\Strategies\Metadata\GetFromMetadataAttributes as BaseGetFromMetadataAttributes;
 
 class GetFromMetadataAttributes extends BaseGetFromMetadataAttributes

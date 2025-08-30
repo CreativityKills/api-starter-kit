@@ -3,6 +3,6 @@
 declare(strict_types=1);
 
 return [
-    Yulo\Providers\AppServiceProvider::class,
-    Yulo\Providers\FortifyServiceProvider::class,
+    App\Providers\AppServiceProvider::class,
+    App\Providers\FortifyServiceProvider::class,
 ];

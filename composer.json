@@ -1,8 +1,18 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "yulo/api",
+    "name": "creativitykills/api-starter-kit",
     "type": "project",
-    "description": "API for Yulo.",
+    "description": "API starter kit for the Laravel framework",
+    "keywords": [
+        "api",
+        "starter",
+        "starter-kit",
+        "laravel",
+        "api-starter-kit",
+        "kit",
+        "laravel"
+    ],
+    "license": "MIT",
     "require": {
         "php": "^8.4",
         "laravel/fortify": "^1.29",
@@ -11,26 +21,17 @@
         "laravel/tinker": "^2.10.1"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^3.6",
-        "ekino/phpstan-banned-code": "^3.0",
         "fakerphp/faker": "^1.23",
-        "friendsofphp/php-cs-fixer": "^3.86",
         "knuckleswtf/scribe": "^5.3",
-        "larastan/larastan": "^3.6",
         "laravel/pail": "^1.2.2",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
         "pestphp/pest": "^4.0",
-        "pestphp/pest-plugin-laravel": "^4.0",
-        "phpstan/extension-installer": "^1.4",
-        "phpstan/phpstan-deprecation-rules": "^2.0",
-        "phpstan/phpstan-mockery": "^2.0",
-        "phpstan/phpstan-webmozart-assert": "^2.0",
-        "staabm/phpstan-todo-by": "^0.3.0"
+        "pestphp/pest-plugin-laravel": "^4.0"
     },
     "autoload": {
         "psr-4": {
-            "Yulo\\": "app/",
+            "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }
@@ -49,10 +50,7 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
-            "@php artisan ide-helper:generate",
-            "@php artisan ide-helper:meta",
-            "@php artisan ide-helper:models --dir='modules' --write --reset"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

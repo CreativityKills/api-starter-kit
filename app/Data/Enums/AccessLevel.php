@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Data\Enums;
+namespace App\Data\Enums;
 
 use Illuminate\Support\Arr;
 use Laravel\Sanctum\Http\Middleware\CheckAbilities;
@@ -32,7 +32,7 @@ enum AccessLevel: string
     private static function middleware(AccessLevelAbilities|array $abilities): string
     {
         $abilities = Arr::wrap($abilities);
-        $abilitiesString = implode(',', array_map(fn (AccessLevelAbilities $ability) => $ability->value, $abilities));
+        $abilitiesString = implode(',', array_map(fn(AccessLevelAbilities $ability) => $ability->value, $abilities));
 
         return CheckAbilities::class.':'.$abilitiesString;
     }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Http\Documentation\Groups;
+namespace App\Http\Documentation\Groups;
 
 use Attribute;
 

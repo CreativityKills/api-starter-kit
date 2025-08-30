@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Extensions\Scribe\Config;
+namespace App\Extensions\Scribe\Config;
 
-use Yulo\Extensions\Scribe\Extracting\Strategies;
+use App\Extensions\Scribe\Extracting\Strategies;
 use Knuckles\Scribe\Config\Defaults as BaseDefaults;
 
 class Defaults extends BaseDefaults

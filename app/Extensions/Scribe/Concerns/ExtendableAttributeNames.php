@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Extensions\Scribe\Concerns;
+namespace App\Extensions\Scribe\Concerns;
 
 /**
  * @mixin \Knuckles\Scribe\Extracting\Strategies\Metadata\GetFromMetadataAttributes
@@ -29,7 +29,7 @@ trait ExtendableAttributeNames
      */
     protected static function usingNamespace(string $type, string $appending = ''): string
     {
-        return "\\Yulo\\Http\\Documentation\\{$type}\\{$appending}";
+        return "\\App\\Http\\Documentation\\{$type}\\{$appending}";
     }
 
     /**
@@ -51,7 +51,7 @@ trait ExtendableAttributeNames
             return;
         }
 
-        $attributeFiles = array_filter($files, fn ($file) => ! in_array(basename($file), self::excludingFiles()));
+        $attributeFiles = array_filter($files, fn($file) => !in_array(basename($file), self::excludingFiles()));
 
         foreach ($attributeFiles as $attributeFile) {
             $attributeName = pathinfo($attributeFile, PATHINFO_FILENAME);

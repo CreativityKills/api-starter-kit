@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Http\Controllers\Authentication;
+namespace App\Http\Controllers\Authentication;
 
 use Illuminate\Http\JsonResponse;
-use Yulo\Http\Documentation\Groups\AuthenticationGroup;
-use Yulo\Http\Requests\Authentication\CreateTokenRequest;
-use Yulo\Http\Documentation\Responses\RateLimitedResponse;
-use Yulo\Http\Documentation\Responses\UnprocessableEntityResponse;
+use App\Http\Documentation\Groups\AuthenticationGroup;
+use App\Http\Requests\Authentication\CreateTokenRequest;
+use App\Http\Documentation\Responses\RateLimitedResponse;
+use App\Http\Documentation\Responses\UnprocessableEntityResponse;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
-use Yulo\Http\Documentation\Responses\Authentication\AccessTokenResponse;
+use App\Http\Documentation\Responses\Authentication\AccessTokenResponse;
 
 #[AuthenticationGroup]
 class CreateTokenController

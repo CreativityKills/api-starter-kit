@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Http\Controllers\Authentication;
+namespace App\Http\Controllers\Authentication;
 
-use Yulo\Models\User;
+use App\Models\User;
 use Knuckles\Scribe\Attributes\Authenticated;
 use Illuminate\Container\Attributes\CurrentUser;
-use Yulo\Http\Documentation\Groups\AuthenticationGroup;
-use Yulo\Http\Documentation\Responses\NoContentResponse;
-use Yulo\Http\Requests\Authentication\RevokeTokenRequest;
-use Yulo\Http\Documentation\Responses\RateLimitedResponse;
+use App\Http\Documentation\Groups\AuthenticationGroup;
+use App\Http\Documentation\Responses\NoContentResponse;
+use App\Http\Requests\Authentication\RevokeTokenRequest;
+use App\Http\Documentation\Responses\RateLimitedResponse;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
 #[AuthenticationGroup]

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Yulo\Models;
+namespace App\Models;
 
 use Laravel\Sanctum\HasApiTokens;
-use Yulo\Data\IssueAccessTokenDto;
-use Yulo\Data\IssuedAccessTokenDto;
+use App\Data\IssueAccessTokenDto;
+use App\Data\IssuedAccessTokenDto;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Notifications\Notifiable;
-use Yulo\Data\Enums\AccessLevelAbilities;
+use App\Data\Enums\AccessLevelAbilities;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -82,7 +82,7 @@ class User extends Authenticatable
      */
     public function firstName(): Attribute
     {
-        return Attribute::make(get: fn () => explode(' ', $this->name)[0]);
+        return Attribute::make(get: fn() => explode(' ', $this->name)[0]);
     }
 
     public function createTokenFromDto(IssueAccessTokenDto $issueRequestDto): IssuedAccessTokenDto
