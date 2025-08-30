@@ -46,11 +46,11 @@ built in.
 
 Your API documentation will be available at `/docs` and your API endpoints will be ready for authentication and token management.
 
-## API Endpoints
+## Default API Endpoints
 
-- **POST** `/api/auth/login` - User authentication and token issuance
-- **POST** `/api/auth/refresh` - Refresh access tokens
-- **POST** `/api/auth/logout` - Revoke access tokens
+- **POST** `/v1/auth/token/create` - User authentication and token issuance
+- **POST** `/v1/auth/token/refresh` - Refresh access tokens
+- **POST** `/v1/auth/token/revoke` - Revoke access tokens
 
 ### Project Structure
 
