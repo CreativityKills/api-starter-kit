@@ -64,7 +64,6 @@ return [
 
     'limiters' => [
         'login' => 'login',
-        'two-factor' => 'two-factor',
         'refresh-token' => 'refresh-token',
     ],
 
