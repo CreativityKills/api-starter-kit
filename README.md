@@ -1,5 +1,53 @@
 # API Starter Kit
 
+Minimal Laravel starter kit aimed at accelerating API development with authentication, and comprehensive documentation tooling
+built in.
+
+## Whats Inside?
+
+✨ **Authentication Ready**
+<img width="3208" height="2072" alt="Image" src="https://github.com/user-attachments/assets/c28ced8f-4475-47eb-8a88-d1a93eb6deef" />
+``
+
+- Laravel Sanctum integration for API token management
+- Laravel Fortify as the backend for user management
+- Token-based authentication with configurable abilities and access levels
+
+📚 **Auto-Generated Documentation**
+
+- Scribe integration with custom extensions for enhanced API docs
+    - Improved Postman collection generation with pre-request script for automatic token generation for all endpoints
+    - Supports environment variables in API Documentation
+- Structured response documentation with reusable classes (using Attributes)
+- Structured API Documentation with groups & subgroups (using Attributes)
+
+🏗️ **Optional Action-based Architecture**
+
+- Action-based architecture for business logic
+- DTOs for type-safe data transfer
+
+🧪 **Testing Foundation**
+
+- Pre-configured Pest testing setup, with existing tests for authentication
+- PHPStan for static analysis
+- PHP CS Fixer for code style
+
+## Quick Start
+
+1. **Install using Laravel new command:**
+   See https://laravel.com/docs/12.x/starter-kits#community-maintained-starter-kits
+   ```bash
+   laravel new example-api --using=creativitykills/api-starter-kit
+   ```
+
+Your API documentation will be available at `/docs` and your API endpoints will be ready for authentication and token management.
+
+## API Endpoints
+
+- **POST** `/api/auth/login` - User authentication and token issuance
+- **POST** `/api/auth/refresh` - Refresh access tokens
+- **POST** `/api/auth/logout` - Revoke access tokens
+
 ### Project Structure
 
 The starter kit remains largely unchanged from the original Laravel application. However, here are **some of the notable
@@ -67,4 +115,4 @@ api-starter-kit/
 ```
 
 </details>
-``
+
