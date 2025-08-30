@@ -30,8 +30,8 @@ readonly class IssueAccessTokenDto
             return $expiresAt;
         }
 
-        $ttl = intval(config('sanctum.expiration')) > 0 ? intval(config('sanctum.expiration')) : null;
+        $ttl = intval(config('sanctum.expiration'));
 
-        return $ttl ? now()->addMinutes($ttl) : null;
+        return $ttl > 0 ? now()->addMinutes($ttl) : null;
     }
 }
