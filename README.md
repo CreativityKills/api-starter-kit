@@ -6,14 +6,18 @@ built in.
 ## Whats Inside?
 
 ✨ **Authentication Ready**
-<img width="3208" height="2072" alt="Image" src="https://github.com/user-attachments/assets/c28ced8f-4475-47eb-8a88-d1a93eb6deef" />
-``
 
-- Laravel Sanctum integration for API token management
 - Laravel Fortify as the backend for user management
+    - Create access token
+    - Refresh access token
+    - Revoke access token
+- Laravel Sanctum integration for API token management with refresh token support
 - Token-based authentication with configurable abilities and access levels
 
 📚 **Auto-Generated Documentation**
+<img width="3208" height="2072" alt="API Documentation" src="https://github.com/user-attachments/assets/c28ced8f-4475-47eb-8a88-d1a93eb6deef" />
+
+<img width="3208" height="2072" alt="Postman Screenshot" src="https://github.com/user-attachments/assets/098d9599-3211-43b1-b587-28919d0d1e73" />
 
 - Scribe integration with custom extensions for enhanced API docs
     - Improved Postman collection generation with pre-request script for automatic token generation for all endpoints
