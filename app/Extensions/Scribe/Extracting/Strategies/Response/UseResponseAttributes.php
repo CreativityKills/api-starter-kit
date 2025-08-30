@@ -29,8 +29,8 @@ class UseResponseAttributes extends BaseUseResponseAttributes
     /**
      * @param  array<Response|ResponseFromFile|ResponseFromApiResource|ResponseFromTransformer>  $attributesOnMethod
      * @param  array<array-key, mixed>  $attributesOnFormRequest
-     * @return array<array-key, mixed>|null
      * @throws \JsonException
+     * @return array<array-key, mixed>|null
      */
     protected function extractFromAttributes(
         ExtractedEndpointData $endpointData,
@@ -40,8 +40,8 @@ class UseResponseAttributes extends BaseUseResponseAttributes
     ): ?array {
         $responses = [];
         foreach ([
-                     ...$attributesOnController, ...$attributesOnFormRequest, ...$attributesOnMethod,
-                 ] as $attributeInstance) {
+            ...$attributesOnController, ...$attributesOnFormRequest, ...$attributesOnMethod,
+        ] as $attributeInstance) {
             if ($attributeInstance instanceof ResponseFromApiResource) {
                 $responses[] = $this->getApiResourceResponse($attributeInstance);
                 continue;
