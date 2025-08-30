@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Authentication;
 
-use Knuckles\Scribe\Attributes\Header;
 use App\Actions\Sanctum\IssueAccessToken;
 use Laravel\Fortify\Contracts\LoginResponse;
 use Knuckles\Scribe\Attributes\Authenticated;
