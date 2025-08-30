@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
+use App\Data\Enums\Abilities;
 use Laravel\Fortify\RoutePath;
-use App\Data\Enums\AccessLevel;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Authentication;
 
@@ -27,7 +27,7 @@ Route::prefix('auth')->group(function () {
         ->middleware(array_filter([
             'auth:sanctum',
             $refreshLimiter ? "throttle:$refreshLimiter" : null,
-            AccessLevel::canRefreshAccessTokenMiddleware(),
+            Abilities::check(Abilities::forRefreshToken()),
         ]));
 
     Route::post(RoutePath::for('logout', '/token/revoke'), Authentication\RevokeTokenController::class)

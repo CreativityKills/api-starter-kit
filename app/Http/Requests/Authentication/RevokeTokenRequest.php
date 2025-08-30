@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Requests\Authentication;
 
 use App\Contracts\SupportsDocumentation;
-use App\Data\Enums\AccessLevelAbilities;
+use App\Data\Enums\Abilities;
 use Illuminate\Foundation\Http\FormRequest;
 
 class RevokeTokenRequest extends FormRequest implements SupportsDocumentation
@@ -14,7 +14,7 @@ class RevokeTokenRequest extends FormRequest implements SupportsDocumentation
     {
         if ($this->revokeAll()) {
             return boolval(
-                $this->user()?->tokenCan(AccessLevelAbilities::SYSTEM__REVOKE_ALL_ACCESS_TOKENS->value)
+                $this->user()?->tokenCan(Abilities::SYSTEM__REVOKE_ALL_ACCESS_TOKENS->value)
             );
         }
 
