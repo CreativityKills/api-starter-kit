@@ -20,7 +20,7 @@ readonly class IssueAccessTokenDto
         ?DateTimeInterface $expiresAt = null,
         ?string $name = null,
     ) {
-        $this->name = $name ?? __('users-device-name', ['name' => $user->name]);
+        $this->name = $name ?? __(":name's Device", ['name' => $user->name]);
         $this->expiresAt = $this->parseExpiresAt($expiresAt);
     }
 

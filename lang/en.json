@@ -1,4 +1,0 @@
-{
-    "fortify.invalid-password-confirmation": "The provided password does not match your current password.",
-    "users-device-name": ":name's Device"
-}
