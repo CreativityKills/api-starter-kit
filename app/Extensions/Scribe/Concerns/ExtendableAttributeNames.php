@@ -51,7 +51,7 @@ trait ExtendableAttributeNames
             return;
         }
 
-        $attributeFiles = array_filter($files, fn($file) => !in_array(basename($file), self::excludingFiles()));
+        $attributeFiles = array_filter($files, fn ($file) => ! in_array(basename($file), self::excludingFiles()));
 
         foreach ($attributeFiles as $attributeFile) {
             $attributeName = pathinfo($attributeFile, PATHINFO_FILENAME);
