@@ -130,7 +130,7 @@ class PostmanCollectionWriter extends BasePostmanCollectionWriter
         $collection['variable'] = [
             ...$collection['variable'],
             $this->defineVariable('version', 'v1'),
-            $this->defineVariable('email', 'neo@yulo.test'),
+            $this->defineVariable('email', 'test@example.com'),
             $this->defineVariable('password', 'password'),
         ];
 
@@ -189,11 +189,11 @@ class PostmanCollectionWriter extends BasePostmanCollectionWriter
 
     private function parseResponseContent(?string $json): string
     {
-        if (!$json) {
+        if (! $json) {
             return '';
         }
 
-        if (!$this->isJsonString($json)) {
+        if (! $this->isJsonString($json)) {
             return $json;
         }
 

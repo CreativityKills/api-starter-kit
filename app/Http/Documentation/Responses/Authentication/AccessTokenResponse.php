@@ -19,9 +19,9 @@ class AccessTokenResponse extends GenericResponse
     protected function getContent(): string
     {
         return $this->parseContent([
-            'access_token' => '32|yulo.kKZv3U9MrlGHaUXwM7pXW232sHcxRo12Kb3VfuEYf3fab36b',
+            'access_token' => '32|kKZv3U9MrlGHaUXwM7pXW232sHcxRo12Kb3VfuEYf3fab36b',
             'access_token_expires_at' => '2025-08-30T09:09:35+00:00',
-            'refresh_token' => '33|yulo.UbOiq6LjuovCTGb7TOVAB9sTDVUDpERzRZYJNoa4e5693ad7',
+            'refresh_token' => '33|UbOiq6LjuovCTGb7TOVAB9sTDVUDpERzRZYJNoa4e5693ad7',
             'refresh_token_expires_at' => '2025-08-31T08:39:35+00:00',
         ]);
     }

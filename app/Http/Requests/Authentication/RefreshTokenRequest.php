@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Requests\Authentication;
 
 use Throwable;
-use Laravel\Sanctum\PersonalAccessToken;
 use App\Contracts\SupportsDocumentation;
+use Laravel\Sanctum\PersonalAccessToken;
 use Illuminate\Foundation\Http\FormRequest;
 
 class RefreshTokenRequest extends FormRequest implements SupportsDocumentation
@@ -37,7 +37,7 @@ class RefreshTokenRequest extends FormRequest implements SupportsDocumentation
         return [
             'token' => [
                 'description' => 'The refresh token to be used to refresh the access token.',
-                'example' => '32|yulo.kKZv3U9MrlGHaUXwM7pXW232sHcxRo12Kb3VfuEYf3fab36b',
+                'example' => '32|kKZv3U9MrlGHaUXwM7pXW232sHcxRo12Kb3VfuEYf3fab36b',
             ],
             'device' => [
                 'description' => 'The name of the device.',
@@ -48,7 +48,7 @@ class RefreshTokenRequest extends FormRequest implements SupportsDocumentation
 
     public function getUserAccessToken(): PersonalAccessToken
     {
-        if (!$this->userAccessToken) {
+        if (! $this->userAccessToken) {
             $hashedToken = hash('sha256', $this->string('token')->explode('|')->last(default: ''));
             $this->userAccessToken = currentUserOrFail()->tokens()->where('token', $hashedToken)->firstOrFail();
         }
