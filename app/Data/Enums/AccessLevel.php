@@ -7,6 +7,7 @@ namespace App\Data\Enums;
 enum AccessLevel
 {
     case FULL;
+    // ...
 
     /**
      * @return ($asString is true ? string : string[])
