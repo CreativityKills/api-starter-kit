@@ -16,7 +16,7 @@ use App\Http\Requests\Authentication\RefreshTokenRequest as Request;
 use App\Http\Documentation\Responses\Authentication\AccessTokenResponse;
 
 #[AuthenticationGroup]
-final class RefreshTokenController
+class RefreshTokenController
 {
     /**
      * Refresh Access Token
