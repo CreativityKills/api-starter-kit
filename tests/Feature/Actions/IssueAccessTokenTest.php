@@ -3,12 +3,12 @@
 declare(strict_types=1);
 
 use App\Models\User;
+use App\Data\Enums\Abilities;
 use App\Data\Enums\AccessLevel;
 use App\Data\IssueAccessTokenDto;
 use App\Data\IssuedAccessTokenDto;
 use App\Events\IssuedAccessTokenEvent;
 use App\Events\IssuingAccessTokenEvent;
-use App\Data\Enums\Abilities;
 use App\Actions\Sanctum\IssueAccessToken;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -41,33 +41,10 @@ it('can issue access token', function (AccessLevel $level, array $abilities, ?Da
 
     Event::assertDispatched(IssuingAccessTokenEvent::class);
     Event::assertDispatched(IssuedAccessTokenEvent::class);
-})->with(fn() => [
-    AccessLevel::FULL->value => [
+})->with(fn () => [
+    'Full' => [
         'level' => AccessLevel::FULL,
-        'abilities' => ['*'],
+        'abilities' => Abilities::for(AccessLevel::FULL),
         'expiresAt' => now()->addMinute(),
-    ],
-    AccessLevel::TRIAL->value => [
-        'level' => AccessLevel::TRIAL,
-        'abilities' => [
-            Abilities::AI__TEXT_IMPROVEMENT->value,
-            Abilities::MODULE__READING_COMPREHENSION->value,
-            Abilities::MODULE__LANGUAGE_ELEMENTS->value,
-            Abilities::MODULE__WRITTEN_EXPRESSION->value,
-        ],
-    ],
-    AccessLevel::BASIC->value => [
-        'level' => AccessLevel::BASIC,
-        'abilities' => [
-            Abilities::AI__TEXT_IMPROVEMENT->value,
-            Abilities::AI__LEARNING_RECOMMENDATIONS->value,
-            Abilities::MODULE__READING_COMPREHENSION->value,
-            Abilities::MODULE__LISTENING_COMPREHENSION->value,
-            Abilities::MODULE__LANGUAGE_ELEMENTS->value,
-            Abilities::MODULE__WRITTEN_EXPRESSION->value,
-            Abilities::MODULE__ORAL_EXPRESSION->value,
-            Abilities::EXAM__TIMED_MODULE_PRACTICE->value,
-            Abilities::EXAM__FULL_MODULE_SIMULATION->value,
-        ],
     ],
 ]);
