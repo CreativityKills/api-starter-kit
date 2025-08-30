@@ -302,14 +302,10 @@ return [
             ...Defaults::BODY_PARAMETERS_STRATEGIES,
         ],
         'responses' => configureStrategy(
-            [
-                Strategies\Response\UseResponseAttributes::class,
-                ...Defaults::RESPONSES_STRATEGIES,
-                ...removeStrategies(Defaults::RESPONSES_STRATEGIES, [
-                    KnucklesStrategies\Responses\UseResponseAttributes::class,
-                    KnucklesStrategies\Responses\ResponseCalls::class,
-                ]),
-            ],
+            removeStrategies(Defaults::RESPONSES_STRATEGIES, [
+                KnucklesStrategies\Responses\UseResponseAttributes::class,
+                KnucklesStrategies\Responses\ResponseCalls::class,
+            ]),
             KnucklesStrategies\Responses\ResponseCalls::withSettings(
                 only: ['GET *'],
                 config: ['app.debug' => false]

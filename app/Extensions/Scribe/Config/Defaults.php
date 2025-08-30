@@ -29,6 +29,7 @@ class Defaults extends BaseDefaults
      * @const array<class-string<\Knuckles\Scribe\Extracting\Strategies\Strategy>>
      */
     public const array RESPONSES_STRATEGIES = [
+        Strategies\Response\UseResponseAttributes::class,
         ...parent::RESPONSES_STRATEGIES,
     ];
 

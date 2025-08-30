@@ -13,11 +13,6 @@ class GetFromMetadataAttributes extends BaseGetFromMetadataAttributes
 
     protected static function fromDirectory(): string
     {
-        return self::usingDirectory('Metadata');
-    }
-
-    protected static function namespace(string $appending = ''): string
-    {
-        return self::usingNamespace('Metadata', $appending);
+        return self::usingDirectory('Groups');
     }
 }

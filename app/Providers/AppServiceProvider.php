@@ -8,6 +8,8 @@ use Illuminate\Support\ServiceProvider;
 use App\Extensions\Scribe\Writing\Writer;
 use Knuckles\Scribe\Writing\Writer as BaseWriter;
 use App\Extensions\Scribe\Writing\Postman\PostmanCollectionWriter;
+use App\Extensions\Scribe\Extracting\Strategies\Response\UseResponseAttributes;
+use App\Extensions\Scribe\Extracting\Strategies\Metadata\GetFromMetadataAttributes;
 use Knuckles\Scribe\Writing\PostmanCollectionWriter as BasePostmanCollectionWriter;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,6 +22,8 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        //
+        // Scribe extensions
+        UseResponseAttributes::extendAttributes();
+        GetFromMetadataAttributes::extendAttributes();
     }
 }

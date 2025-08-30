@@ -18,12 +18,7 @@ class UseResponseAttributes extends BaseUseResponseAttributes
 
     protected static function fromDirectory(): string
     {
-        return self::usingDirectory('Response');
-    }
-
-    protected static function namespace(string $appending = ''): string
-    {
-        return self::usingNamespace('Response', $appending);
+        return self::usingDirectory('Responses');
     }
 
     /**
@@ -39,9 +34,8 @@ class UseResponseAttributes extends BaseUseResponseAttributes
         array $attributesOnController = []
     ): ?array {
         $responses = [];
-        foreach ([
-            ...$attributesOnController, ...$attributesOnFormRequest, ...$attributesOnMethod,
-        ] as $attributeInstance) {
+
+        foreach ([...$attributesOnController, ...$attributesOnFormRequest, ...$attributesOnMethod] as $attributeInstance) {
             if ($attributeInstance instanceof ResponseFromApiResource) {
                 $responses[] = $this->getApiResourceResponse($attributeInstance);
                 continue;
