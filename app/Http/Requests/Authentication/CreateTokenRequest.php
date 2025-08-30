@@ -25,7 +25,7 @@ class CreateTokenRequest extends LoginRequest implements SupportsDocumentation
         return [
             'email' => [
                 'description' => 'The email address of the user.',
-                'example' => 'john.doe@yulo.app',
+                'example' => 'john.doe@example.com',
             ],
             'password' => [
                 'description' => 'The password of the user.',
