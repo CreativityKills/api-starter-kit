@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(BaseWriter::class, Writer::class);
-        $this->app->bind(BasePostmanCollectionWriter::class, fn() => PostmanCollectionWriter::make());
+        $this->app->bind(BasePostmanCollectionWriter::class, fn () => PostmanCollectionWriter::make());
     }
 
     public function boot(): void
